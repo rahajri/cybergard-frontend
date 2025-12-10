@@ -1,0 +1,239 @@
+/*
+ * Styles communs pour les pages Campagnes et Évaluations
+ * Aligné avec le design CYBERGARD AI
+ */
+
+/* KPI Cards */
+.campaign-kpi-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.campaign-kpi-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.campaign-kpi-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.campaign-kpi-sublabel {
+  font-size: 0.875rem;
+}
+
+.campaign-kpi-icon-wrapper {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+/* Status Badges */
+.campaign-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+}
+
+.campaign-status-badge .icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.25rem;
+}
+
+/* Status: Brouillon */
+.status-draft {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.status-draft-bg {
+  background-color: #f9fafb;
+  border-color: #e5e7eb;
+}
+
+/* Status: En cours */
+.status-ongoing {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.status-ongoing-bg {
+  background-color: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+/* Status: Terminé/Terminée */
+.status-completed {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status-completed-bg {
+  background-color: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+/* Status: Suspendu/Figée */
+.status-paused, .status-frozen {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-paused-bg, .status-frozen-bg {
+  background-color: #fffbeb;
+  border-color: #fde68a;
+}
+
+/* Status: En retard */
+.status-late {
+  background-color: #fed7aa;
+  color: #9a3412;
+}
+
+.status-late-bg {
+  background-color: #fff7ed;
+  border-color: #fed7aa;
+}
+
+/* Status: Annulée */
+.status-cancelled {
+  background-color: #fecaca;
+  color: #991b1b;
+}
+
+.status-cancelled-bg {
+  background-color: #fef2f2;
+  border-color: #fecaca;
+}
+
+/* Campaign/Evaluation Card */
+.campaign-card {
+  border: 1px solid;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.campaign-card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.campaign-card-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.campaign-card-meta-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.campaign-card-meta-item .icon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+/* Progress Bar */
+.campaign-progress-container {
+  margin-bottom: 1rem;
+}
+
+.campaign-progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.campaign-progress-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.campaign-progress-value {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.campaign-progress-bar-bg {
+  width: 100%;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  height: 0.5rem;
+}
+
+.campaign-progress-bar-fill {
+  height: 0.5rem;
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+.campaign-progress-bar-fill.high {
+  background-color: #16a34a;
+}
+
+.campaign-progress-bar-fill.medium {
+  background-color: #2563eb;
+}
+
+.campaign-progress-bar-fill.low {
+  background-color: #ea580c;
+}
+
+/* Action Buttons */
+.campaign-action-btn {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  color: #6b7280;
+  transition: all 0.2s;
+}
+
+.campaign-action-btn:hover {
+  color: #2563eb;
+  background-color: #eff6ff;
+}
+
+.campaign-action-btn .icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Empty State */
+.campaign-empty-state {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.campaign-empty-icon {
+  width: 4rem;
+  height: 4rem;
+  color: #d1d5db;
+  margin: 0 auto 1rem;
+}
+
+.campaign-empty-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.campaign-empty-description {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}

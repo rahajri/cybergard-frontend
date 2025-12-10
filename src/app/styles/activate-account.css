@@ -1,0 +1,417 @@
+/* frontend/app/styles/activate-account.css */
+
+/* ============================================
+   KEYCLOAK STYLE - ACTIVATION ACCOUNT
+   ============================================ */
+
+/* Animation de rotation pour les spinners */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Container principal */
+.keycloak-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #7f1d1d 100%);
+  padding: 2rem 1rem;
+}
+
+/* Card principale */
+.keycloak-card {
+  width: 100%;
+  max-width: 480px;
+  background: #2d3748;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+/* Header avec logo */
+.keycloak-header {
+  background: #1a202c;
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 1px solid #4a5568;
+}
+
+.keycloak-logo {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.keycloak-brand {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* Section titre */
+.keycloak-title-section {
+  padding: 2rem 2rem 1rem;
+  text-align: center;
+}
+
+.keycloak-page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 0.5rem 0;
+}
+
+.keycloak-page-subtitle {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Contenu */
+.keycloak-content {
+  padding: 0 2rem 2rem;
+}
+
+/* Alerte d'erreur */
+.keycloak-alert-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  border-radius: 0.375rem;
+  color: #fca5a5;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Formulaire */
+.keycloak-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Groupe de champ */
+.keycloak-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Label */
+.keycloak-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #d1d5db;
+  margin: 0;
+}
+
+/* Wrapper d'input avec icône */
+.keycloak-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.keycloak-input-icon {
+  position: absolute;
+  left: 1rem;
+  color: #6b7280;
+  pointer-events: none;
+}
+
+/* Input */
+.keycloak-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  background: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 0.375rem;
+  color: white;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.keycloak-input::placeholder {
+  color: #6b7280;
+}
+
+.keycloak-input:focus {
+  outline: none;
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.keycloak-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Bouton toggle password */
+.keycloak-toggle-password {
+  position: absolute;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.keycloak-toggle-password:hover {
+  color: #d1d5db;
+}
+
+/* Indicateur de force du mot de passe */
+.password-strength-container {
+  margin-top: 0.5rem;
+}
+
+.password-strength-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.password-strength-label {
+  color: #9ca3af;
+}
+
+.password-strength-value {
+  font-weight: 600;
+}
+
+.password-strength-bars {
+  display: flex;
+  gap: 0.5rem;
+  height: 0.25rem;
+}
+
+.password-strength-bar {
+  flex: 1;
+  background: #4b5563;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease;
+}
+
+/* Exigences du mot de passe */
+.password-requirements {
+  background: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 0.375rem;
+  padding: 1rem;
+}
+
+.password-requirements-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #d1d5db;
+  margin: 0 0 0.75rem 0;
+}
+
+.password-requirements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Item de validation */
+.validation-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.validation-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  color: #6b7280;
+}
+
+.validation-icon.valid {
+  background: #16a34a;
+  color: white;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+}
+
+.validation-text {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  transition: all 0.3s ease;
+}
+
+.validation-text.valid {
+  color: #86efac;
+  font-weight: 600;
+}
+
+/* Bouton de soumission */
+.keycloak-submit-button {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  color: white;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.keycloak-submit-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.4);
+  transform: translateY(-1px);
+}
+
+.keycloak-submit-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+}
+
+.keycloak-submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #6b7280;
+  box-shadow: none;
+}
+
+/* Conseil de sécurité */
+.security-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 0.375rem;
+  color: #93c5fd;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.security-tip-title {
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.security-tip-text {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .keycloak-container {
+    padding: 1rem;
+  }
+
+  .keycloak-card {
+    max-width: 100%;
+  }
+
+  .keycloak-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .keycloak-logo {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .keycloak-brand {
+    font-size: 1.5rem;
+  }
+
+  .keycloak-title-section {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+
+  .keycloak-page-title {
+    font-size: 1.25rem;
+  }
+
+  .keycloak-content {
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  .keycloak-form {
+    gap: 1rem;
+  }
+
+  .password-requirements {
+    padding: 0.875rem;
+  }
+
+  .validation-item {
+    gap: 0.5rem;
+  }
+
+  .validation-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .validation-text {
+    font-size: 0.8125rem;
+  }
+
+  .keycloak-submit-button {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .security-tip {
+    padding: 0.875rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .keycloak-brand {
+    font-size: 1.25rem;
+  }
+
+  .keycloak-page-title {
+    font-size: 1.125rem;
+  }
+
+  .keycloak-page-subtitle {
+    font-size: 0.8125rem;
+  }
+}

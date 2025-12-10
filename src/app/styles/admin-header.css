@@ -1,0 +1,60 @@
+/* Header admin : aligne Titre à gauche / Actions à droite */
+/* Accent par défaut + par section */
+.admin { --accent-color: #7c3aed; }
+.admin[data-section="dashboard"]     { --accent-color: #0ea5e9; }
+.admin[data-section="referentiels"]   { --accent-color: #2563eb; }
+.admin[data-section="points-controle"]{ --accent-color: #7c3aed; }
+.admin[data-section="questionnaires"] { --accent-color: #6366f1; }
+.admin[data-section="clients"]        { --accent-color: #059669 !important; }  /* ✅ VERT pour Clients */
+
+
+.admin .admin-page-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.admin .admin-page-title {
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1.1vw + 1rem, 1.75rem);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;  /* ✅ ESPACE entre icône et titre */
+}
+
+.admin .admin-page-actions {
+  margin-left: auto; /* pousse les actions à droite */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  float: none !important; /* neutralise toute règle héritée */
+  clear: none !important;
+}
+
+/* Au cas où un style global mettrait display:block; */
+.admin .admin-page-actions > * {
+  white-space: nowrap; /* évite les sauts de ligne inutiles */
+}
+
+/* Couleur d'accent uniquement pour l'icône du titre */
+.admin .page-title-icon {
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+}
+
+/* Laisse Lucide suivre currentColor, sans forcer stroke globalement */
+.admin .page-title-icon svg {
+  stroke: currentColor;
+}
+
+/* ✅ FORCE spécifiquement pour clients si conflit */
+.admin[data-section="clients"] .page-title-icon {
+  color: #059669 !important;
+}
+
+.admin[data-section="clients"] .page-title-icon svg {
+  stroke: #059669 !important;
+}

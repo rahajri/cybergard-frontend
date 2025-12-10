@@ -1,0 +1,347 @@
+/* styles/points-controle.css - CSS dédié pour la page Points de Contrôle */
+
+.points-controle-page {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.points-controle-container {
+  width: 100%;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+  max-width: none;
+}
+
+/* Section des statistiques */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+/* Section des filtres */
+.filters-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* Section du tableau - POINT CRITIQUE */
+.table-section {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  /* IMPORTANT: Ne pas limiter la hauteur */
+  min-height: auto;
+  height: auto;
+}
+
+.table-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Tableau avec hauteur libre */
+.control-points-table {
+  width: 100%;
+  border-collapse: collapse;
+  /* CRITIQUE: Pas de hauteur max */
+}
+
+.control-points-table thead {
+  background-color: #f9fafb;
+}
+
+.control-points-table th {
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.control-points-table td {
+  padding: 1rem 0.75rem;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: top;
+}
+
+.control-points-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* Code du point de contrôle */
+.control-code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #2563eb;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.control-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.control-description {
+  font-size: 0.75rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+/* Badges de criticité */
+.criticality-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid;
+}
+
+.criticality-critical {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.criticality-high {
+  background-color: #fff7ed;
+  color: #ea580c;
+  border-color: #fed7aa;
+}
+
+.criticality-medium {
+  background-color: #fffbeb;
+  color: #d97706;
+  border-color: #fde68a;
+}
+
+.criticality-low {
+  background-color: #f0fdf4;
+  color: #16a34a;
+  border-color: #bbf7d0;
+}
+
+/* Actions */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  padding: 0.25rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: color 0.2s;
+}
+
+.action-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.action-btn.view { color: #2563eb; }
+.action-btn.edit { color: #16a34a; }
+.action-btn.delete { color: #dc2626; }
+
+.action-btn.view:hover { color: #1d4ed8; }
+.action-btn.edit:hover { color: #15803d; }
+.action-btn.delete:hover { color: #b91c1c; }
+
+/* Footer du tableau */
+.table-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  border-radius: 0 0 0.75rem 0.75rem;
+}
+
+.pagination-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pagination-btn {
+  padding: 0.5rem 0.75rem;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #f9fafb;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Footer global */
+.app-footer {
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .points-controle-container {
+    padding: 1rem 0.5rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .table-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .control-points-table th,
+  .control-points-table td {
+    padding: 0.5rem;
+  }
+  
+  .control-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.stat-card.effort {
+  border-left: 4px solid #ea580c;
+}
+.stat-card.effort .stat-label {
+  color: #ea580c;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.stat-card.effort .stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #c2410c;
+}
+
+/* Force le scroll si nécessaire */
+body {
+  overflow-y: auto !important;
+}
+
+html {
+  overflow-y: auto !important;
+}
+
+/* app/styles/points-controle.css */
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== BADGES DE STATUT ====== */
+.questionnaire-editor-namespace .status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.questionnaire-editor-namespace .status-badge.status-draft {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.questionnaire-editor-namespace .status-badge.status-validated {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.questionnaire-editor-namespace .status-badge.status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.questionnaire-editor-namespace .status-badge.status-rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}

@@ -1,0 +1,40 @@
+/* Header client : Titre à gauche / Actions à droite */
+.client { --accent-color: #0ea5e9; } /* défaut */
+.client[data-section="dashboard"]      { --accent-color: #2563eb; }   /* bleu */
+.client[data-section="administration"] { --accent-color: #10b981; }   /* émeraude */
+.client[data-section="evaluation"]     { --accent-color: #7c3aed; }   /* violet */
+.client[data-section="actions"]        { --accent-color: #f97316; }   /* orange */
+
+.client .client-page-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.client .client-page-title {
+  font-weight: 700;
+  font-size: clamp(1.35rem, 1.1vw + 1rem, 1.9rem);
+  margin: 0;
+  color: #0f172a; /* gris-900 */
+}
+
+.client .client-page-subtitle {
+  color: #475569; /* slate-600 */
+  margin: 0;
+}
+
+.client .client-page-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.client .page-title-icon {
+  color: var(--accent-color); /* seule l’icône prend l’accent */
+}
+
+.client .page-title-icon svg {
+  stroke: currentColor;
+}

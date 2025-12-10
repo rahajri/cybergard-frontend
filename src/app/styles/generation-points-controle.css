@@ -1,0 +1,147 @@
+/* ============ Génération PC – feuille dédiée ============ */
+
+/* Variables (thème clair) */
+:root {
+  --gen-accent: #2563eb;      /* blue-600 */
+  --gen-accent-2: #7c3aed;    /* purple-600 */
+  --gen-ok: #16a34a;          /* green-600 */
+  --gen-warn: #ea580c;        /* orange-600 */
+  --gen-err: #dc2626;         /* red-600 */
+  --gen-border: #e5e7eb;      /* gray-200 */
+  --gen-text: #111827;        /* gray-900 */
+  --gen-muted: #6b7280;       /* gray-500 */
+  --gen-bg: #f9fafb;          /* gray-50 */
+  --gen-card: #ffffff;        /* white */
+}
+
+/* Dark mode */
+:root[class~="dark"],
+[data-theme="dark"] {
+  --gen-accent: #60a5fa;      /* blue-400 */
+  --gen-accent-2: #a78bfa;    /* purple-400 */
+  --gen-ok: #4ade80;          /* green-400 */
+  --gen-warn: #fb923c;        /* orange-400 */
+  --gen-err: #f87171;         /* red-400 */
+  --gen-border: #374151;      /* gray-700 */
+  --gen-text: #f3f4f6;        /* gray-100 */
+  --gen-muted: #9ca3af;       /* gray-400 */
+  --gen-bg: #0b1220;          /* fond sombre */
+  --gen-card: #111827;        /* gray-900 */
+}
+
+/* Wrapper page */
+.gen-page {
+  background: var(--gen-bg);
+}
+
+/* Header */
+.gen-header {
+  border-bottom: 1px solid var(--gen-border);
+  background: var(--gen-card);
+}
+
+/* Steps (progression) */
+.gen-steps .gen-step-dot {
+  width: 32px; height: 32px; border-radius: 9999px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 600; font-size: 0.875rem;
+  color: #fff; background: #9ca3af; /* par défaut gris */
+}
+.gen-steps .is-active { background: var(--gen-accent); }
+.gen-steps .is-done   { background: var(--gen-ok); }
+.gen-steps .gen-step-bar {
+  height: 4px; border-radius: 9999px; background: var(--gen-border);
+}
+.gen-steps .gen-step-bar > .fill {
+  height: 100%; border-radius: 9999px; background: var(--gen-ok);
+  transition: width 450ms ease;
+}
+
+/* Cartes référentiels */
+.gen-fw-card {
+  border: 1px solid var(--gen-border);
+  border-radius: 0.75rem;
+  background: var(--gen-card);
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+}
+.gen-fw-card:hover { transform: translateY(-1px); }
+.gen-fw-card.is-selected {
+  border-color: var(--gen-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--gen-accent) 20%, transparent);
+}
+
+/* Progression de génération */
+.gen-progress {
+  background: #e5e7eb; /* gray-200 fallback */
+  height: 12px; border-radius: 9999px;
+}
+.gen-progress .bar {
+  background: var(--gen-accent);
+  height: 100%; border-radius: 9999px;
+  transition: width 900ms ease;
+}
+
+/* Liste validation */
+.gen-validation-list {
+  max-height: 64vh;           /* évite les pages interminables */
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+.gen-validation-card {
+  background: var(--gen-card);
+  border: 1px solid var(--gen-border);
+  border-radius: 0.75rem;
+}
+
+/* Badges */
+.gen-badge {
+  font-size: 0.75rem; font-weight: 600;
+  padding: 0.25rem 0.5rem; border-radius: 9999px;
+  display: inline-flex; align-items: center; gap: 0.25rem;
+}
+.gen-badge.crit { background: color-mix(in srgb, var(--gen-err) 12%, #fff); color: var(--gen-err); }
+.gen-badge.high { background: color-mix(in srgb, var(--gen-warn) 12%, #fff); color: var(--gen-warn); }
+.gen-badge.med  { background: #fef9c3; color: #854d0e; } /* jaune doux */
+.gen-badge.low  { background: #dcfce7; color: #166534; } /* vert doux */
+
+/* Boutons d'action (favorise focus states) */
+.gen-btn {
+  position: relative; outline: none;
+}
+.gen-btn:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--gen-accent) 35%, transparent);
+}
+
+/* Zone “Justification IA” */
+.gen-rationale {
+  background: #f9fafb;
+  border: 1px dashed var(--gen-border);
+  border-radius: .5rem;
+}
+
+/* Accessibilité & petits détails */
+.gen-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.8125rem;
+}
+
+/* ===== Footer dédié Génération PC ===== */
+.gen-footer {
+  background: var(--gen-card);
+  border-top: 1px solid var(--gen-border);
+}
+.gen-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive tweeks */
+@media (max-width: 640px) {
+  .gen-steps .label { display: none; }
+  .gen-validation-list { max-height: none; }
+}
+
+/* Impression : garde l’essentiel (résumé + points validés) */
+@media print {
+  .gen-header, .gen-steps, .gen-actions, .gen-fw-picker, .gen-controls { display: none !important; }
+  .gen-validation-card { break-inside: avoid; }
+}

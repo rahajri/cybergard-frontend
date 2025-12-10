@@ -1,0 +1,141 @@
+/* Styles personnalisés pour Quill Editor et Display */
+
+/* Styles pour l'affichage du contenu riche (RichTextDisplay) */
+.rich-text-display {
+  color: #374151;
+  line-height: 1.6;
+}
+
+.rich-text-display p {
+  margin-bottom: 0.75em;
+}
+
+.rich-text-display p:last-child {
+  margin-bottom: 0;
+}
+
+.rich-text-display h1 {
+  font-size: 1.75em;
+  font-weight: 700;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  color: #1f2937;
+}
+
+.rich-text-display h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-top: 0.75em;
+  margin-bottom: 0.5em;
+  color: #1f2937;
+}
+
+.rich-text-display h3 {
+  font-size: 1.25em;
+  font-weight: 600;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  color: #374151;
+}
+
+.rich-text-display strong {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.rich-text-display em {
+  font-style: italic;
+}
+
+.rich-text-display u {
+  text-decoration: underline;
+}
+
+.rich-text-display s {
+  text-decoration: line-through;
+}
+
+.rich-text-display ul,
+.rich-text-display ol {
+  margin-left: 1.5em;
+  margin-bottom: 0.75em;
+  padding-left: 0.5em;
+}
+
+.rich-text-display ul {
+  list-style-type: disc;
+}
+
+.rich-text-display ol {
+  list-style-type: decimal;
+}
+
+.rich-text-display li {
+  margin-bottom: 0.25em;
+}
+
+.rich-text-display a {
+  color: #667eea;
+  text-decoration: underline;
+}
+
+.rich-text-display a:hover {
+  color: #764ba2;
+}
+
+/* Couleurs de fond et de texte Quill */
+.rich-text-display .ql-bg-black {
+  background-color: #000;
+}
+
+.rich-text-display .ql-bg-red {
+  background-color: #e60000;
+}
+
+.rich-text-display .ql-bg-orange {
+  background-color: #f90;
+}
+
+.rich-text-display .ql-bg-yellow {
+  background-color: #ff0;
+}
+
+.rich-text-display .ql-bg-green {
+  background-color: #008a00;
+}
+
+.rich-text-display .ql-bg-blue {
+  background-color: #06c;
+}
+
+.rich-text-display .ql-bg-purple {
+  background-color: #93f;
+}
+
+.rich-text-display .ql-color-white {
+  color: #fff;
+}
+
+.rich-text-display .ql-color-red {
+  color: #e60000;
+}
+
+.rich-text-display .ql-color-orange {
+  color: #f90;
+}
+
+.rich-text-display .ql-color-yellow {
+  color: #ff0;
+}
+
+.rich-text-display .ql-color-green {
+  color: #008a00;
+}
+
+.rich-text-display .ql-color-blue {
+  color: #06c;
+}
+
+.rich-text-display .ql-color-purple {
+  color: #93f;
+}
